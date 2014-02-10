@@ -39,6 +39,12 @@ module FirstApp
     # Configure sensitive parameters which will be filtered from the log file.
     config.filter_parameters += [:password]
 
+    # for heroku
+    #[Heroku] Rails 3.2 アプリを git push すると rake assets:precompile でエラーが出るときの対処法
+    #refer to http://codenote.net/heroku/1050.html
+    #2014/2/10
+    config.assets.initialize_on_precompile = false
+
     # Enable escaping HTML in JSON.
     config.active_support.escape_html_entities_in_json = true
 
